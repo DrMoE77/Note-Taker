@@ -1,21 +1,18 @@
-// Installing dependancies
-const express =require("express");
-const fs = require("fs");
-const path = require("path")
+// installing dependencies - express, path
+const express = require('express');
+const path = require('path');
 
-// Setting up express
-const app = express ()
-const port = process.env.port||8000
+// initialiazing the express modules
+const app = express();
 
+// loading the json file and the necessary routing files
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/api/notes', require('./routes/apiroutes'));
+app.use('/', require('./routes/htmlroutes'));
 
-app.use(express.json())
-// Serve the asset files in the public folder
-app.use(express.static(path.join(__dirname,"public")))
-
-//connecting to the api route and html routes files
-app.use("/api/notes",require("./apiroutes"))
-app.use("/",require("./htmlroutes"))
-
-
-// Listening to the port
-app.listen(port,()=>console.log("listening to port " + port));
+// starting the server at port 8000
+const port = process.env.port || 8000;
+app.listen(port, () => {
+    console.log(`Server started at ${port}`);
+});
