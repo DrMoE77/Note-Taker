@@ -12,7 +12,7 @@ app.use('/api/notes', require('./routes/apiroutes'));
 app.use('/', require('./routes/htmlroutes'));
 
 // starting the server at port 8000
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
 });
