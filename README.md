@@ -2,7 +2,8 @@
   
 
   ## Description
-  This web application helps you to take notes and save them, as well as view the previously saved notes.
+  This web application helps you to take notes and save them, as well as view the previously saved notes
+  Deployed link: https://moe77-note-taker.herokuapp.com/
 
   ## Table of Contents
   * [Usage](#usage)
@@ -32,4 +33,5 @@
 
   ## Contact
   My GitHub: (https://github.com/DrMoE77) <br>
+  
  
